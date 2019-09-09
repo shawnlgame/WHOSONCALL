@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+body {
+	background-color:red;
+}
+.onCallDiv {
+	position: absolute;
+  	left: 85%;
+	top:0;
+}
+.help {
+	position: absolute;
+
+	top: 0;
+	left: 0;
+}
+.text {
+	color:white;
+}
+.statePms {
+	font-size: 12px;
+}
+#oncall{font-size:68px;}
+</style>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* The device with borders */
+.smartphone {
+  position: relative;
+  width: 360px;
+  height: 640px;
+  margin: auto;
+  border: 16px black solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+/* The horizontal line on the top of the device */
+.smartphone:before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.smartphone:after {
+  content: '';
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 50%;
+}
+
+/* The screen (or content) of the device */
+.smartphone .content {
+  width: 360px;
+  height: 640px;
+  background: white;
+}
+</style>
+</head>
+
+<body>
+
+
+
+<center>
+
+<div id="oncall" class=""></div>
+<div id="hiddenEntries">Blah</div>
+
+<form name="contact" method="POST" data-netlify="true">
+<input type="text"  id="onCallEntry1"></input>
+<button onclick= "onCallEntry1Btn()">X</button>
+
+</form>
+
+</center>
+
+ 
+
+
+
+<script>
+HiddenEntries= document.getElementById("hiddenEntries")
+onCallEntry1= document.getElementById("onCallEntry1")
+
+function onCallEntry1Btn(){
+hiddenEntries.innerHTML=onCallEntry1.value;
+}
+</script>
+<script>
+
+
+
+
+
+	onCall1 = "Shawn Game";
+	onCall2 = "Dave Turner";
+	onCall3 = "Kevin Morgan";
+	onCall4 = "Ron Hubbard";
+	onCall5 = "Doug Boguszewski";
+	onCall6 = "Greg Estep";
+	onCall7 = "Jose Gutierrez";
+
+
+
+//Date and PM On-Call
+	//Create Date
+	var dateObj = new Date();
+	var month = dateObj.getUTCMonth() + 1; //months from 1-12
+	var day = dateObj.getUTCDate();
+	newdate = month + "/" + day;
+
+	var text2= document.getElementById("oncall")
+string1 = " is currently";
+string2 = " on call";
+
+//Create function (Who's On Call?)
+//When todays date matches the date below it alerts which pm is on call.
+	//Create function to alert who is on call when button is clicked
+	
+
+		if(newdate.match(/8\/5|8\/6|8\/7|8\/8|8\/9|8\/10|8\/11|9\/23|9\/24|9\/25|9\/26|9\/27|9\/28|9\/29|11\/12|11\/13|11\/14|11\/15|11\/16|11\/17|12\/30|12\/31/)){
+			text2.innerHTML = onCall4 + "\n" + "is currently on call";
+	}
+		if(newdate.match(/8\/19|8\/20|8\/21|8\/22|8\/23|8\/24|8\/25|10\/7|10\/8|10\/9|10\/10|10\/11|10\/12|10\/13|11\/25|11\/26|11\/27|11\/28|11\/29|11\/30|11\/31|11\/32|12\/1/)){
+			text2.innerHTML = onCall2 + "\n" + "is currently on call";
+	}
+		if(newdate.match(/9\/2|9\/3|9\/4|9\/5|9\/6|9\/7|9\/8|10\/21|10\/22|10\23|10\/24|10\/25|10\/26|10\/27|12\/9|12\/10|12\/13|12\/14|12\/15/)){
+			text2.innerHTML += onCall3 + "</br>" + string1 + "</br>" + string2;
+	}
+		if(newdate.match(/9\/16|9\/17|9\/18|9\/19|9\/20|9\/21|9\/22|11\/4|11\/5|11\6|11\/7|11\/8|11\/9|11\/10|12\/23|12\/24|12\/25|12\/26|12\/27|12\/28|12\/29/)){
+			text2.innerHTML = onCall1 + "\n" + "is currently on call";
+	}
+		if(newdate.match(/9\/9|9\/10|9\/11|9\/12|9\/13|9\/14|9\/15|10\/28|10\/29|10\30|10\/31|11\/1|11\/2|11\/3|12\/16|12\/17|12\/18|12\/19|12\/20|12\/21|12\/22/)){
+			text2.innerHTML = onCall5 + "\n" + "is currently on call";
+	}
+		if(newdate.match(/8\/26|8\/27|8\/28|8\/29|8\/30|8\/31|9\/1|10\/14|10\/15|10\/16|10\/17|10\/18|10\/19|10\/20|12\/2|12\/3|12\/4|12\/5|12\/6|12\/7|12\/8/)){
+			text2.innerHTML = onCall6 + "\n" + "is currently on call";
+	}
+		if(newdate.match(/8\/12|8\/13|8\/14|8\/15|8\/16|8\/17|8\/18|9\/30|10\/1|10\/2|10\/3|10\/4|10\/5|10\/6|11\/18|11\/19|11\/20|11\/21|11\/22|11\/23|11\/24/)){
+			text2.innerHTML = onCall7 + "\n" + "is currently on call";
+	}
+
+
+
+
+</script>
+
+
+</html>	
